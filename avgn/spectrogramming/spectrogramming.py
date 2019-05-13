@@ -71,8 +71,8 @@ def _istft_tensorflow(stfts, hparams):
 
 def _stft_parameters(hparams):
   n_fft = (hparams['num_freq'] - 1) * 2
-  hop_length = int(hparams['frame_shift_ms'] / 1000 * hparams['sample_rate'])
-  win_length = int(hparams['frame_length_ms'] / 1000 * hparams['sample_rate'])
+  hop_length = int(hparams['frame_shift_ms'] / 1000. * hparams['sample_rate'])
+  win_length = int(hparams['frame_length_ms'] / 1000. * hparams['sample_rate'])
   return n_fft, hop_length, win_length
 
 def _linear_to_mel(spectrogram, _mel_basis):
